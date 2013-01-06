@@ -12,9 +12,9 @@
 			  document.getElementsByTagName("head")[0].appendChild(fileref)
 		}
 		
-		loadcssfile("assets/css/bootstrap.css");
-		loadcssfile("assets/css/bootstrap-responsive.css");
-		loadcssfile("assets/css/indic.css");
+		loadcssfile("https://indiccomments.youngsoch.in/assets/css/bootstrap.css");
+		loadcssfile("https://indiccomments.youngsoch.in/assets/css/bootstrap-responsive.css");
+		loadcssfile("https://indiccomments.youngsoch.in/assets/css/indic.css");
 		var imported = document.createElement('script');
 		imported.src = 'https://www.google.com/jsapi?callback=loadTransliterate';
 		document.getElementsByTagName('head')[0].appendChild(imported);
@@ -101,7 +101,7 @@
 				}
 			}
 			
-			xmlhttp.open("GET", "loadComments.php?page_uid=" + page_uid, true);
+			xmlhttp.open("GET", "https://indiccomments.youngsoch.in/loadComments.php?page_uid=" + page_uid, true);
 			xmlhttp.send();
 
 
@@ -150,7 +150,7 @@
 					}
 
 
-					xmlhttp.open("POST", "insertComment.php", true);
+					xmlhttp.open("POST", "https://indiccomments.youngsoch.in/insertComment.php", true);
 					xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 					xmlhttp.send("comment_text=" + ic_new_comment.value + "&user_uid=" + user_uid + "&social_portal=" + social_portal + "&page_uid=" + page_uid + "&user_name=" + user_name);
