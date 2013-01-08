@@ -5,11 +5,11 @@
 
 		function loadcssfile(filename){
 			 
-			  var fileref=document.createElement("link")
-			  fileref.setAttribute("rel", "stylesheet")
-			  fileref.setAttribute("type", "text/css")
-			  fileref.setAttribute("href", filename)
-			  document.getElementsByTagName("head")[0].appendChild(fileref)
+			  var fileref=document.createElement("link");
+			  fileref.setAttribute("rel", "stylesheet");
+			  fileref.setAttribute("type", "text/css");
+			  fileref.setAttribute("href", filename);
+			  document.getElementsByTagName("head")[0].appendChild(fileref);
 		}
 		
 		loadcssfile("https://indiccomments.youngsoch.in/assets/css/bootstrap.css");
@@ -30,7 +30,8 @@
 			
 			window.fbAsyncInit = function () {
 				FB.init({
-					appId: '466770620024920', // App ID
+					//appId: '466770620024920', // App ID
+					appId: '384623184961308',
 					status: true, // check login status
 					cookie: true, // enable cookies to allow the server to access the session
 					xfbml: true // parse XFBML
@@ -76,7 +77,7 @@
 						});
 					});
 
-
+					alert.show(xmlhttp.responseText);
 
 					document.getElementById("indicComment").innerHTML = xmlhttp.responseText;
 
