@@ -7,7 +7,6 @@ Author: Mudit Jain <mdt.j89@gmail.com>
 Version: 1.0
 Author URI: http://about.me/mudit.jain
 */
-//putenv('INDICHOST=https://indiccomments.youngsoch.in')
 
 function indic_comments_template($value) {
     return dirname(__FILE__) . '/comments.php';

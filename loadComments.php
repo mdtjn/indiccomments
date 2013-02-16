@@ -2,11 +2,7 @@
 
 include 'functions.php';
 
-$db = "inzaak_indicomm";
-$user = "inzaak_indicomm";
-$pswd = "inzaak_indicomm";
-
-$con = mysql_connect("localhost",$user,$pswd);
+$con = mysql_connect("localhost","root","");
 
 if (!$con)
   {
@@ -18,7 +14,7 @@ if (!$con)
   
   $query = "SELECT comment_id,comment_text, user_uid,user_name,social_portal from comments where page_uid = '".$page_uid."'";
   
-  mysql_select_db($db, $con);
+  mysql_select_db("indiccomments", $con);
   $result = mysql_query("SET NAMES utf8"); 
   $result = mysql_query($query);
   

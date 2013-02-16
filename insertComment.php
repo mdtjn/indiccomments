@@ -1,16 +1,13 @@
 ﻿<?php
-$db = "inzaak_indicomm";
-$user = "inzaak_indicomm";
-$pswd = "inzaak_indicomm";
 
-$con = mysql_connect("localhost",$user,$pswd);
+$con = mysql_connect("localhost","root","");
 
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
   }
     
-  mysql_select_db($db, $con);
+  mysql_select_db("indiccomments", $con);
   mysql_query("SET NAMES utf8"); 
   
   $comment_text =  $_POST["comment_text"];

@@ -5,7 +5,7 @@
 			var page_uid = document.URL;
 			(function() {
 				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				dsq.src = 'https://indiccomments.youngsoch.in/assets/js/indic.js';
+				dsq.src = 'wp-content/plugins/indic-wp-plugin/assets/js/indic.js'; 
 				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			})();
 			

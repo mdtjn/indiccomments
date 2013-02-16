@@ -1,20 +1,21 @@
 	
 		var user_uid = '';
 		var social_portal = 'FB';
+		
 		var user_name = '';
 
 		function loadcssfile(filename){
 			 
-			  var fileref=document.createElement("link");
-			  fileref.setAttribute("rel", "stylesheet");
-			  fileref.setAttribute("type", "text/css");
-			  fileref.setAttribute("href", filename);
-			  document.getElementsByTagName("head")[0].appendChild(fileref);
+			  var fileref=document.createElement("link")
+			  fileref.setAttribute("rel", "stylesheet")
+			  fileref.setAttribute("type", "text/css")
+			  fileref.setAttribute("href", filename)
+			  document.getElementsByTagName("head")[0].appendChild(fileref)
 		}
 		
-		loadcssfile("https://indiccomments.youngsoch.in/assets/css/bootstrap.css");
-		loadcssfile("https://indiccomments.youngsoch.in/assets/css/bootstrap-responsive.css");
-		loadcssfile("https://indiccomments.youngsoch.in/assets/css/indic.css");
+		loadcssfile("wp-content/plugins/indic-wp-plugin/assets/css/bootstrap.css");
+		loadcssfile("wp-content/plugins/indic-wp-plugin/assets/css/bootstrap-responsive.css");
+		loadcssfile("wp-content/plugins/indic-wp-plugin/assets/css/indic.css");
 		var imported = document.createElement('script');
 		imported.src = 'https://www.google.com/jsapi?callback=loadTransliterate';
 		document.getElementsByTagName('head')[0].appendChild(imported);
@@ -30,8 +31,7 @@
 			
 			window.fbAsyncInit = function () {
 				FB.init({
-					//appId: '466770620024920', // App ID
-					appId: '384623184961308',
+					appId: '384623184961308', // App ID
 					status: true, // check login status
 					cookie: true, // enable cookies to allow the server to access the session
 					xfbml: true // parse XFBML
@@ -77,7 +77,7 @@
 						});
 					});
 
-					alert.show(xmlhttp.responseText);
+
 
 					document.getElementById("indicComment").innerHTML = xmlhttp.responseText;
 
@@ -102,7 +102,7 @@
 				}
 			}
 			
-			xmlhttp.open("GET", "https://indiccomments.youngsoch.in/loadComments.php?page_uid=" + page_uid, true);
+			xmlhttp.open("GET", "wp-content/plugins/indic-wp-plugin/loadComments.php?page_uid=" + page_uid, true);
 			xmlhttp.send();
 
 
@@ -115,7 +115,7 @@
 		function onLoad() {
 			var options = {
 				sourceLanguage: 'en',
-				destinationLanguage: ['hi','am', 'ar', 'bn', 'zh', 'el', 'gu', 'kn', 'ml', 'mr', 'ne', 'or', 'fa', 'pa', 'ru', 'sa', 'si', 'sr', 'ta', 'te', 'ti', 'ur'],
+				destinationLanguage: ['am', 'ar', 'bn', 'zh', 'el', 'gu', 'hi', 'kn', 'ml', 'mr', 'ne', 'or', 'fa', 'pa', 'ru', 'sa', 'si', 'sr', 'ta', 'te', 'ti', 'ur'],
 				shortcutKey: 'ctrl+g',
 				transliterationEnabled: true
 			};
@@ -151,7 +151,7 @@
 					}
 
 
-					xmlhttp.open("POST", "https://indiccomments.youngsoch.in/insertComment.php", true);
+					xmlhttp.open("POST", "wp-content/plugins/indic-wp-plugin/insertComment.php", true);
 					xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 					xmlhttp.send("comment_text=" + ic_new_comment.value + "&user_uid=" + user_uid + "&social_portal=" + social_portal + "&page_uid=" + page_uid + "&user_name=" + user_name);
